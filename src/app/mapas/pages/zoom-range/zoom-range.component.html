@@ -3,10 +3,10 @@
 <div class="row">
     <div class="col-12">
         <label class="form-label">
-            - Zoom: 16
-            - Longitud, Latitud: -34.6033, -58.3816
+            - Zoom: {{zoomLevel | number:'2.0-2'}}
+            - Longitud, Latitud: {{center[0] | number:'2.0-2'}}, {{center[1] | number:'2.0-2'}}
         </label>
-        <input type="range" class="form-range" id="customRange1">
+        <input type="range" class="form-range" [value]="zoomLevel" min="0" max="18" (input)="zoomCambio(zoomInput.value)" #zoomInput>
     </div>
 
     <div class="col-12">
